@@ -1,0 +1,19 @@
+Problemas do Puzzle:Orientação Objeto/Busca Cega - amplitude
+
+Matrix NxN:
+
+
+
+Estado inicial = sorteado
+qtd 3x3 = 9 ( 0 - 8)
+
+lista()
+lista.sort()
+lista.shuffle()
+
+
+Regras de Transição:
+moverCima
+moverBaixo
+moverDireita
+moverEsquerda
