@@ -3,6 +3,10 @@ import java.util.LinkedList;
 import java.util.List;
 import busca.Heuristica;
 import busca.Estado;
+import busca.BuscaProfundidade;
+import busca.MostraStatusConsole;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 
 public class Mapa implements Estado, Heuristica {
 
@@ -117,21 +121,22 @@ public class Mapa implements Estado, Heuristica {
         Util.lerArquivoMapa(Mapa.matrizAdjacencia, Mapa.listaHeuristica);
         Grafo.mostrarMatrizAdjacencia(Mapa.matrizAdjacencia, Mapa.listaHeuristica);
 
-//        int qualMetodo;
-//        Nodo n;
-//        try {
-//        
-//            qualMetodo = Integer.parseInt(JOptionPane.showInputDialog(null, "1 - Profundidade\n2 - Largura\n3 - A*"));
-//            int origem = Grafo.pegaIndice("Arad", listaHeuristica);
-//            int destino = Grafo.pegaIndice("Bucharest", listaHeuristica);
-//            estadoInicial = new Mapa(origem, destino, "Estado Inicial");
-//
-//            switch (qualMetodo) {
-//                case 1:
-//                    System.out.println("busca em PROFUNDIDADE");
-//                    n = new BuscaProfundidade(new MostraStatusConsole()).busca(estadoInicial);
-//                    break;
-//                case 2:
+        int qualMetodo;
+        //Nodo n = new AEstrela(new MostraStatusConsole()).busca(estadoInicial); // Com Status de andamento
+        Nodo n;
+        try {
+        
+            qualMetodo = Integer.parseInt(JOptionPane.showInputDialog(null, "1 - Profundidade\n2 - Largura\n3 - A*"));
+            int origem = Grafo.pegaIndice("Arad", listaHeuristica);
+            int destino = Grafo.pegaIndice("Bucharest", listaHeuristica);
+            Estado estadoInicial = new Mapa(origem, destino, "Estado Inicial");
+
+            switch (qualMetodo) {
+                case 1:
+                    System.out.println("busca em PROFUNDIDADE");
+                    n = new BuscaProfundidade(new MostraStatusConsole()).busca(estadoInicial);
+                    break;
+//                case 2:;
 //                    System.out.println("busca em LARGURA");
 //                    n = new BuscaLargura(new MostraStatusConsole()).busca(estadoInicial);
 //                    break;
@@ -139,19 +144,19 @@ public class Mapa implements Estado, Heuristica {
 //                    System.out.println("busca em A*");
 //                    n = new AEstrela(new MostraStatusConsole()).busca(estadoInicial);
 //                    break;
-//                default:
-//                    n = null;
-//                    JOptionPane.showMessageDialog(null, "Método não implementado");
-//            }
-//            if (n == null) {
-//                System.out.println("sem solucao!");
-//                System.out.println(estadoInicial);
-//            } else {
-//                System.out.println("solucao:\n" + n.montaCaminho() + "\n\n");
-//            }
-//        } catch (HeadlessException | NumberFormatException e) {
-//            JOptionPane.showMessageDialog(null, e.getMessage());
-//        }
+                default:
+                    n = null;
+                    JOptionPane.showMessageDialog(null, "Método não implementado");
+            }
+            if (n == null) {
+                System.out.println("sem solucao!");
+                System.out.println(estadoInicial);
+            } else {
+                System.out.println("solucao:\n" + n.montaCaminho() + "\n\n");
+            }
+        } catch (HeadlessException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
         System.exit(0);
     }
 }
