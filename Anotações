@@ -1,0 +1,55 @@
+# Sistemas de Comportamentos Inteligentes
+
+## Motor de Raciocineo/Inferência/deliberação - estratégias de busca.  
+Buscas cegas ou não informadas;  
+> Dedução - Raciocinio dedutivo: **Profundidade**;   
+> Buscas heuristicas ou informados;  
+> Aprendizagem de máquina - Reconhecimento de padrões por repetição de amostras.
+
+## Paradigmas de Programação: Linguagens de Programação - Robert Sebesta;  
+* Paradigma Imperativo:
+	> Programador se comunica com o computador, informando:
+		> o que ele quer;  
+		> como ele quer;  
+		> quando ele quer;  
+
+* Paradigma Lógico: **SQL**
+	> Programador se comunica com o computador, informando:
+		> o que ele quer;  
+		> quando ele quer;
+
+		Select Aluno.nome,Aluno.Matricula  
+		from Aluno  
+		where Aluno.nome = "Alexandre";  
+
+* Paradigma Funcional: Heskel, Lisp - Ambiente 100% funcional, trabalha com função.
+	> Programador se comunica com o computador, informando:  
+		> o que ele quer;  
+		> quando ele quer;  
+
+
+## PROLOG - Linguagem lógica de Programação;
+* Baseada em sentenças = proposição = predicado
+	* lógica de primeira ordem
+* Possui um motor de raciocinio bbaseadi no método de profundidade
+	* ou seja, o PROLOG deduz;
+
+Sentenças = proposições = predicado = funções.  
+- fatos = crença = verdade;  
+	> progenitor("Alexandre","Dante").  
+	> progenitor("Jurandir",""Alexandre").  
+
+	> matricula (1000,cc).  
+	> matricula (1001,cc).
+
+	> jogo ("Grêmio",3,2,"Guarani").  
+	> jogo ("Guarani",3,0,"Grêmio").  
+
+	>estaEm("Cruz Alta","RS");  
+	>estaEM("Santa Maria","RS");  
+	>estaEm("Florianopolis","SC");  
+	>estaEm("Rio Grande do Sul - RS","Brasil");  
+	>estaEm("Santa Cruz - SC","Brasil");  
+	>estaEm("Barcelona","Espanha");    
+	
+- regras = planos = hipotese;
